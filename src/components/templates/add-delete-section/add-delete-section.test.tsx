@@ -2,6 +2,7 @@ import React from 'react';
 import {AddDeleteSection} from './add-delete-section';
 import {render} from '@testing-library/react-native';
 import AddIcon from '../../../utils/assets/AddIcon.png';
+import {SUCCESS} from '../../../utils/constants/strings-constants';
 
 describe('AddDeleteSection', () => {
   test('Should render a component', () => {
@@ -29,6 +30,8 @@ describe('AddDeleteSection', () => {
           },
         ]}
         onPressDeleteIcon={jest.fn}
+        gifError=""
+        gifStatus={SUCCESS}
       />,
     );
 

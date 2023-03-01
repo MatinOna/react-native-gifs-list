@@ -1,6 +1,7 @@
 import React from 'react';
 import {CardDelete} from './card-delete';
 import {render} from '@testing-library/react-native';
+import {SUCCESS} from "../../../utils/constants/strings-constants";
 
 describe('CardDelete Component', () => {
   const DATA_MOCK = [
@@ -23,7 +24,7 @@ describe('CardDelete Component', () => {
 
   test('Should render a component', () => {
     const myCardDelete = render(
-      <CardDelete onPressDeleteIcon={jest.fn} data={DATA_MOCK} />,
+      <CardDelete onPressDeleteIcon={jest.fn} data={DATA_MOCK} dataError='' dataStatus={SUCCESS}/>,
     );
 
     expect(myCardDelete).toBeDefined();

@@ -17,7 +17,9 @@ interface AddDeleteSectionProps {
   onPressAddGif: (event: GestureResponderEvent) => void;
   searchPlaceholder: string;
   gifs: Gif[];
-  onPressDeleteIcon: (event: GestureResponderEvent) => void;
+  gifError: string;
+  gifStatus: string;
+  onPressDeleteIcon: (gif: Gif) => void;
 }
 
 const AddDeleteSection: FC<AddDeleteSectionProps> = ({
@@ -27,6 +29,8 @@ const AddDeleteSection: FC<AddDeleteSectionProps> = ({
   onPressAddGif,
   searchPlaceholder,
   gifs,
+  gifError,
+  gifStatus,
   onPressDeleteIcon,
 }) => {
   return (
@@ -40,7 +44,12 @@ const AddDeleteSection: FC<AddDeleteSectionProps> = ({
         onPressAddGif={onPressAddGif}
         placeholder={searchPlaceholder}
       />
-      <CardDelete data={gifs} onPressDeleteIcon={onPressDeleteIcon} />
+      <CardDelete
+        data={gifs}
+        dataError={gifError}
+        dataStatus={gifStatus}
+        onPressDeleteIcon={onPressDeleteIcon}
+      />
     </View>
   );
 };
